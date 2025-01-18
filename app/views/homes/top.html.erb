@@ -1,2 +1,28 @@
-<h1>welcome to Bookers!!</h1>
-<p>homes/top</p>
+<div class="container d-flex">
+  <div class="row mx-auto flex-column">
+    <div class="row">
+      <div class="col ">
+        <h1>welcome to <strong><i class="fa-solid fa-book-open"></i>Bookers!!</strong></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>
+        In <strong><i class="fa-solid fa-book-open"></i>Bookers</strong>,<br>
+        you can share and exchange your opinions , inpressions , and emotions<br>
+        about various books!
+        </p>
+      </div>
+    </div>
+    <div class="row mx-auto">
+      <div class="col py-0 mb-1 btn btn-info">
+        <%= link_to "Log in", new_user_session_path %>
+      </div>
+    </div>
+    <div class="row mx-auto">
+      <div class="col py-0 mt-1 btn btn-success">
+        <%= link_to "Sign up", new_user_registration_path %>
+      </div>
+    </div> 
+  </div>
+</div>
