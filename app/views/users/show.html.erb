@@ -1,3 +1,26 @@
 <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<%= render 'books/list', book: @book %>
+
+<h4>User info</h4>
+    <%= image_tag @user.get_profile_image(100,100) %>
+    <p>name</p>
+    <p><%= @user.name %></p>
+    <p>introduction<p>
+    <%= link_to "User info", edit_user_path %>
+
+
+<%= form_with model: @book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :opinion %>
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+ <h4>Books</h4>
+<% @books.each do |book| %>
+  <div>
+    <p><%= book.user.name %></p>
+    <p><%= book.title %></p>
+    <p><%= book.opinion %></p>
+  </div>
+<% end %>
