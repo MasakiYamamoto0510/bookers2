@@ -11,5 +11,8 @@
       <%= @user.name %>
       <%= @post_book.title %>
       <%= @post_book.opinion %>
+      <% if @post_book.user == current_user %>
+      <%= link_to "削除", book_path(@post_book.id), method: :delete %>
+    <% end %>
     </div>
 </div>
