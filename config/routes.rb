@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "homes#top"
 
-  resources :books, only: [:new, :index, :show, :create]
+  resources :books, only: [:new, :index, :show, :create, :destroy]
   resources :users, only: [:show, :edit, :index]
   post '/users/:id', to: 'books#create', as: 'create_book'
   
