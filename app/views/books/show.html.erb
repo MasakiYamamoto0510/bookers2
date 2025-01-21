@@ -1,2 +1,15 @@
 <h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="container d-flex"> 
+
+    <%= render partial: 'users/show_leftside', locals: { book: @book, user: @user } %>
+
+    <div class="col-lg-7">
+      <div class="row border-bottom">
+        <h2>Book detail</h2>
+      </div>
+      <%= image_tag @user.get_profile_image(100,100) %>
+      <%= @user.name %>
+      <%= @post_book.title %>
+      <%= @post_book.opinion %>
+    </div>
+</div>
