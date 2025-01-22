@@ -1,15 +1,21 @@
-  <div class="container d-flex"> 
+  <div class="container d-flex mt-2"> 
 
-  <%= render 'show_leftside', book: @book, user: @user %>
+    <div class="col-lg-4">
+      <%= render 'show_leftside', book: @book, user: @user %>
+    </div>
+
+    <div class="col-lg-1">
+    </div>
 
     <div class="col-lg-7">
-    <div class="row border-bottom">
-      <h2>Books</h2>
-    </div>
+      <div class="row border-bottom">
+        <h2>Books</h2>
+      </div>
+
       <table>
         <thead>
-          <tr>
-            <th colspan="1"></th>
+          <tr class="border-bottom">
+            <th></th>
             <th>title</th> 
             <th>opinion</th>
           </tr>

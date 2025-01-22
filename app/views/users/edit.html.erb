@@ -1,2 +1,41 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4">
+      <div class="row mt-1">
+        <h1>User info</h1>
+      </div>
+      
+      <div class="row d-flex flex-column ml-1">
+        <%= form_with model: @user do |f| %>
+          <div class="row">
+            <p>Name</p>
+          </div>
+          <div class="row">
+            <%= f.text_field :name %>
+          </div>
+          <div class="row pt-1">
+            <p>Image</p>
+          </div>
+          <div class="row">
+            <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>  
+          </div>
+          <div class="row pt-1">
+            <p>Introduction</p>
+          </div>
+          <div class="row">
+            <%= f.text_area :introduction %>
+          </div>
+          <div class="row mt-2">
+            <%= f.submit 'Update User' %>
+          </div>
+          
+        <% end %>
+      </div>
+
+    </div>
+    <div class="col-lg-4">
+    </div>
+  </div>
+</div>
