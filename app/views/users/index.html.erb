@@ -1,21 +1,45 @@
 <h2>user_index</h2>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-3">
+        <div class="row">
+          <%= render partial: 'show_leftside', locals: { book: @book, user: @user } %>
+        </div>
+      </div>
 
-<%= render partial: 'show_leftside', locals: { book: @book, user: @user } %>
+      <div class="col-lg-1">
+      </div>
 
-<h2>Users</h2>
+      <div class="col-lg-8">
+        <div class="row border-bottom">
+          <h2>Users</h2>
+        </div>
 
-<table>
+        <table>
 
-<tr>
-  <th>image</th>  
-  <th>name</th>
-</tr>
-<% @users.each do |user| %>
-<tr>
-  <td><%= image_tag user.get_profile_image(100,100) %></td>  
-  <td><%= user.name %></td>  
-  <td><%= link_to "Show", user_path(user.id) =%></td>
-</tr>
-<% end %>
+          <tr class="row border-bottom">
+            <th class="col">image</th>  
+            <th class="col">&nbsp;</th>
+            <th class="col">&nbsp;</th>
+            <th class="col">&nbsp;</th>
+            <th class="col">&nbsp;</th>
+            <th class="col">&nbsp;</th>
+            <th class="col mr-5">name</th>
+          </tr>
 
-</table>
+        <% @users.each do |user| %>
+        <tr class="row">
+          <td><%= image_tag user.get_profile_image(100,100) %></td>  
+          <th class="col">&nbsp;</th>
+          <th class="col">&nbsp;</th>
+          <th class="col">&nbsp;</th>
+          <td class="col "><%= user.name %></td>  
+          <td><%= link_to "Show", user_path(user.id) =%></td>
+        </tr>
+        <% end %>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
