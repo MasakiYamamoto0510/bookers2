@@ -11,12 +11,12 @@
       <h2>Book detail</h2>
     </div>
     <%= image_tag @user.get_profile_image(100,100) %>
-      <%= @user.name %>
-      <%= @post_book.title %>
+      <%=link_to @user.name, user_path(@user.id) %>
+      <%=link_to @post_book.title, book_path(@post_book.id) %>
       <%= @post_book.opinion %>
       <% if @post_book.user == current_user %>
-      <%= link_to "Edit", edit_book_path(@post_book.id) %>
-      <%= link_to "Destroy", book_path(@post_book.id), method: :delete %>
-    <% end %>
+        <%= link_to "Edit", edit_book_path(@post_book.id) %>
+        <%= link_to "Destroy", book_path(@post_book.id), method: :delete %>
+      <% end %>
   </div>
 </div>
