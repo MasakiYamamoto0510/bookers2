@@ -1,5 +1,5 @@
 <div class="container d-flex">
-  <div class="row mx-auto flex-column">
+  <div class="row mx-auto flex-column mt-2">
     <div class="row">
       <div class="col ">
         <h1>welcome to <strong><i class="fa-solid fa-book"></i>Bookers!!</strong></h1>
@@ -14,14 +14,21 @@
         </p>
       </div>
     </div>
-    <div class="row mx-auto">
-      <div class="col py-0 mb-1 btn btn-info">
-        <%= link_to "Log in", new_user_session_path %>
-      </div>
-    </div>
-    <div class="row mx-auto">
-      <div class="col py-0 mt-1 btn btn-success">
-        <%= link_to "Sign up", new_user_registration_path %>
+
+        <%= link_to new_user_session_path do%>
+          <div class="row d-grid">
+            <div class="col btn btn-info mb-2">
+              <span>Log in</span>
+            </div>
+          </div>
+        <% end %>
+        <%= link_to  new_user_registration_path do%>
+          <div class="row d-grid">
+            <div class="col btn btn-success">
+              <span>Sign in</span>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div> 
   </div>
