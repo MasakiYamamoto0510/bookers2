@@ -33,12 +33,12 @@
   </div>
   <div class="row">
   <%= form_with model: book do |f| %>
-      <h6>Title</h6>
-      <%= f.text_field :title %>
-      <h6>Opinion</h6>
-      <%= f.text_area :opinion %>
+    <h6>Title</h6>
+    <%= f.text_field :title %>
+    <h6>Opinion</h6>
+    <%= f.text_area :body %>
     <div class="row pl-3">
-      <%= f.submit 'Create Book' %>
+    <%= f.submit 'Create Book' %>
     </div>
   <% end %>
   </div>

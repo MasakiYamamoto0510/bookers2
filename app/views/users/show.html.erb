@@ -12,23 +12,21 @@
         <h2>Books</h2>
       </div>
 
-      <table>
+      <table class="table table-striped">
         <thead>
-          <tr class="border-bottom">
-            <th></th>
+          <tr>
+            <th>&nbsp;</th>
             <th>title</th> 
             <th>opinion</th>
           </tr>
-        </thead>
           <% @books.each do |book| %>
-        <tbody>
-            <tr>
-              <td><%= image_tag @user.get_profile_image(100,100) %></td>
-              <td><%= book.title %></td>
-              <td><%= book.opinion %></td>
-            </tr>
-        </tbody>
+          <tr>
+            <td><%= image_tag @user.get_profile_image(100,100) %></td>
+            <td><%= book.title %></td>
+            <td><%= book.body %></td>
+          </tr>
           <% end %>
+        </thead>
       </table>
     </div>
   </div>
