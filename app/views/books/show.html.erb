@@ -10,13 +10,25 @@
     <div class="row border-bottom">
       <h2>Book detail</h2>
     </div>
-    <%= image_tag @user.get_profile_image(100,100) %>
-      <%=link_to @user.name, user_path(@user.id) %>
-      <%=link_to @post_book.title, book_path(@post_book.id) %>
-      <%= @post_book.opinion %>
+    <div class="row">
+      <div class="col">
+        <%= image_tag @user.get_profile_image(100,100) %>
+        <%=link_to @user.name, user_path(@user.id) %>
+      </div>
+      <div class="col">
+        <%=link_to @post_book.title, book_path(@post_book.id) %>
+      </div>
+      <div class="col">
+        <%= @post_book.body %>
+      </div>
       <% if @post_book.user == current_user %>
-        <%= link_to "Edit", edit_book_path(@post_book.id) %>
-        <%= link_to "Destroy", book_path(@post_book.id), method: :delete %>
+        <div class="col">
+          <%= link_to "Edit", edit_book_path(@post_book.id) %>
+        </div>
+        <div class="col">
+          <%= link_to "Destroy", book_path(@post_book.id), method: :delete %>
+        </div>
       <% end %>
+    </div>
   </div>
 </div>
