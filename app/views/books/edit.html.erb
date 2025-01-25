@@ -8,14 +8,14 @@
       </div>
 
       <% if @book.errors.any? %>
-        <%= @book.errors.count %>件のエラーが発生しました
+        <strong><%= @book.errors.count %>error prohibited this obj from being saved:</strong>
         <ul>
           <% @book.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
         </ul>
       <% end %>
-      
+
       <div class="row d-flex flex-column ml-1">
         <%= form_with model: @book do |f| %>
           <div class="row">
@@ -28,7 +28,7 @@
             <p>Opinion</p>
           </div>
           <div class="row">
-            <%= f.text_area :opinion %>
+            <%= f.text_area :body %>
           </div>
           <div class="row mt-2">
             <%= f.submit '保存' %>
