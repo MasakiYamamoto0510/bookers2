@@ -6,6 +6,17 @@
       <div class="row mt-1">
         <h1>User info</h1>
       </div>
+
+      <div class="row">
+      <% if @user.errors.any? %>
+        <strong><%= @user.errors.count %>error prohibited this obj from being saved:</strong>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      </div>
       
       <div class="row d-flex flex-column ml-1">
         <%= form_with model: @user do |f| %>
