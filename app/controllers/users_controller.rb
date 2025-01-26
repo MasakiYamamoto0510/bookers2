@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @book = Book.new
     @books = Book.all
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def edit
