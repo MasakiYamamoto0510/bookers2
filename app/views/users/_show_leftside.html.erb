@@ -1,45 +1,39 @@
-<div class="col">
+
   <div class="row flex-column">
-  <div class="row pl-3">
     <h2>User info</h2>
-  </div>
-  <div class="row border-bottom">
-    <%= image_tag user.get_profile_image(100,100) %>
-  </div>
-  <div class="row border-bottom d-flex align-items-center justify-content-center">
-    <div class="col-5 pt-1">
-      <p><strong>name</strong></p> 
+    <div class="row border-bottom">
+      <%= image_tag user.get_profile_image(100,100) %>
     </div>
-    <div class="col-5 pt-1">
-      <p><strong><%= user.name %></strong></p>
-    </div>
-  </div>
-   <div class="row">
-      <span class="offset-1"></span>
-      <div class="col">
-       <p><strong>introduction</strong><p>
+    <div class="row border-bottom">
+      <div class="col-5 pt-1">
+        <p><strong>name</strong></p> 
       </div>
       <div class="col-5 pt-1">
-       <p><strong><%= user.introduction %></strong></p>
+        <p><strong><%= user.name %></strong></p>
       </div>
+    </div>
+
+    <div class="row">
+      <p><strong>introduction</strong><p>
+      <p><strong><%= user.introduction %></strong></p>
     </div>
     <div class="row border border-2 rounded justify-content-center">
       <%= link_to edit_user_path(user.id) do%><i class="fa-solid fa-user-gear"></i><% end %>
     </div>
-  </div>
 
-  <div class="row">
-  <h2>New book</h2>
-  </div>
-  <div class="row">
-  <%= form_with model: book do |f| %>
-    <h6>Title</h6>
-    <%= f.text_field :title %>
-    <h6>Opinion</h6>
-    <%= f.text_area :body %>
-    <div class="row pl-3">
-    <%= f.submit 'Create Book' %>
+    <div class="row">
+      <h2>New book</h2>
     </div>
-  <% end %>
+    <div class="row">
+      <%= form_with model: book do |f| %>
+      <h6>Title</h6>
+      <%= f.text_field :title %>
+      <h6>Opinion</h6>
+      <%= f.text_area :body %>
+      <div class="row pl-3">
+        <%= f.submit 'Create Book' %>
+      </div>
+    <% end %>
   </div>
 </div>
+
