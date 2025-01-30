@@ -17,7 +17,7 @@
           <div class="container">
 
           <div class="nav-link navbar-brand">
-            <%= link_to root_path do %>
+            <%= link_to root_path, class: 'text-light' do %>
               <span>Bookers</span>
             <% end %>
           </div>
@@ -30,28 +30,28 @@
                 <% if user_signed_in? %>
                     <li class="nav-item">
                       <div class="nav-link">
-                        <%= link_to user_path(current_user.id) do %>
+                        <%= link_to user_path(current_user.id), class: 'text-light' do %>
                           <i class="fa-solid fa-house"></i><span>Home</span>
                         <% end %>
                       </div>
                     </li>
                     <li class="nav-item">
                       <div class="nav-link">
-                        <%= link_to users_path do %>
+                        <%= link_to users_path, class: 'text-light' do %>
                           <i class="fa-solid fa-users"></i><span>Users</span>
                         <% end %>
                       </div>
                     </li>
                     <li class="nav-item">
                       <div class="nav-link">
-                        <%= link_to books_path do %>
+                        <%= link_to books_path, class: 'text-light' do %>
                         <i class="fa-solid fa-book-open"></i><span>Books</span>
                         <% end %>
                       </div>
                     </li>
                     <li class="nav-item">
                       <div class="nav-link">
-                        <%= link_to destroy_user_session_path, method: :delete do %>
+                        <%= link_to destroy_user_session_path, class: 'text-light', method: :delete do %>
                         <i class="fa-solid fa-right-from-bracket"></i><span>Log out</span>
                         <% end %>
                       </div>
@@ -59,28 +59,28 @@
                   <% else %>
                     <li class="nav-item">
                       <div class="nav-link">
-                        <%= link_to root_path do %>
+                        <%= link_to root_path, class: 'text-light' do %>
                           <i class="fa-solid fa-house"></i><span>Home</span>
                         <% end %>
                       </div>
                     </li>
                     <li class="nav-item">
                       <div class="nav-link">
-                        <%= link_to about_path do %>
+                        <%= link_to about_path, class: 'text-light' do %>
                           <i class="fa-solid fa-link"></i><span>About</span>
                         <% end %>
                       </div>
                     </li>
                     <li class="nav-item">
                       <div class="nav-link">
-                        <%= link_to new_user_registration_path do %>
+                        <%= link_to new_user_registration_path, class: 'text-light' do %>
                           <i class="fa-solid fa-user-plus"></i><span>Sign up</span>
                         <% end %>
                       </div>
                     </li>
                     <li class="nav-item">
                       <div class="nav-link">
-                        <%= link_to user_session_path, method: :post do %>
+                        <%= link_to user_session_path, class: 'text-light', method: :post do %>
                           <i class="fa-solid fa-right-to-bracket"></i><span>Log in</span>
                         <% end %>
                       </div>
